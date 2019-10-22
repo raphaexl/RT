@@ -6,7 +6,7 @@
 /*   By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 20:58:28 by ebatchas          #+#    #+#             */
-/*   Updated: 2019/10/21 22:45:44 by ebatchas         ###   ########.fr       */
+/*   Updated: 2019/10/22 12:55:42 by eabdenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void		ft_read_face(t_obj *obj, char *tab)
 	ft_norm_face(index, obj);
 }
 
-
-void	ft_make_obj(t_obj *obj, t_vector *v, t_vector *uvs, t_vector *normals)
+void		ft_make_obj(t_obj *obj, t_vector *v, t_vector *uvs,
+		t_vector *normals)
 {
 	int		i;
 	int		size;
