@@ -83,9 +83,7 @@ char		*ft_str_read(char *line)
 {
 	char	**tab;
 	char	*str;
-	int		i;
 
-	i = -1;
 	if (!(tab = ft_strsplit(line, ' ')) || ft_tab_len(tab) < 2)
 		ft_print_error("expected a string :)");
 	if (ft_isalpha(*tab[1]))
@@ -100,9 +98,7 @@ int			ft_bool_read(char *line)
 {
 	char	**tab;
 	int		ret;
-	int		i;
 
-	i = -1;
 	if (!(tab = ft_strsplit(line, ' ')) || ft_tab_len(tab) < 2)
 		ft_print_error("expected a boolean :)");
 	if (ft_isalpha(*tab[1]))

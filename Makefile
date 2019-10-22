@@ -16,7 +16,7 @@ BINDIR=.
 SRCDIR=srcs
 LIBDIR=libs
 HEADDIR=includes
-CFLAGS=-Wall -Wextra -I$(HEADDIR)
+CFLAGS=-Wall -Wextra -Werror -I$(HEADDIR)
 LDFLAGS= $(CFLAGS) -L$(LIBDIR)/ -lft -lm
 
 UNAME_S := $(shell uname -s)
@@ -25,8 +25,8 @@ DONE_COLOR=\x1b[34;03m
 EOC=\033[0m
 
 ifeq	($(UNAME_S),Linux)
+	CFLAGS += -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lm
 	LDFLAGS += -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lm
-	#LDFLAGS = $(CFLAGS) $(LIBDIR)/libft/libft.a -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lm
 endif
 
 ifeq	($(UNAME_S),Darwin)
@@ -273,7 +273,12 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@make -C $(LIBDIR)/libft/ fclean && make -C $(LIBDIR)/libft
 	@cp $(LIBDIR)/libft/libft.a $(LIBDIR)/
+ifeq ($(UNAME_S),Darwin)
 	@$(CC) $(LDFLAGS) -o $@ $^
+endif
+ifeq ($(UNAME_S),Linux)
+	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
+endif
 	@echo "$(DONE_COLOR) $(BINDIR)/$(NAME) compiled successfully !$(EOC)"
 ifeq ($(UNAME_S),Darwin)
 		@install_name_tool -change @rpath/SDL2.framework/Versions/A/SDL2 $(SDL2) $(NAME)
@@ -284,7 +289,12 @@ endif
 $(LIBDIR)/%.o:$(HEADDIR)/%.h
 
 $(LIBDIR)/%.o:$(SRCDIR)/*/%.c
+ifeq ($(UNAME_S),Darwin)
 	@$(CC) $(CFLAGS) -o $@ -c $<
+endif
+ifeq ($(UNAME_S),Linux)
+	@$(CC) -c $< -o $@ $(CFLAGS)
+endif
 
 .PHONY:clean fclean
 

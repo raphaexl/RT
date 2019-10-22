@@ -54,11 +54,6 @@ t_object	*ft_ellipsoid_new(void)
 
 t_vec3		ft_normal_ellipsoid(t_ellipsoid *e, t_vec3 p)
 {
-	t_vec3	cmid;
-	t_vec3	r;
-
-	cmid = ft_vec3_kmult(0.5 * e->k, e->v);
-	r = ft_vec3_sub(p, cmid);
 	return (ft_vec3_kmult(1.0 / e->radius, p));
 }
 

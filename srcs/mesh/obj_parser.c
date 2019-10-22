@@ -16,9 +16,7 @@ void	ft_parse_obj_vector(t_vector *v, char *line)
 {
 	char		**tab;
 	t_vec3		vec;
-	int			i;
 
-	i = 0;
 	vec = (t_vec3){.0, 0.0, 0.0};
 	if ((tab = ft_strsplit(line, ' ')) && ft_tab_len(tab) == 4)
 	{
@@ -34,9 +32,7 @@ void	ft_parse_obj_uv(t_vector *v, char *line)
 {
 	char		**tab;
 	t_vec2		vec;
-	int			i;
 
-	i = 0;
 	vec = (t_vec2){.0, 0.0};
 	if ((tab = ft_strsplit(line, ' ')) && ft_tab_len(tab) == 3)
 	{
@@ -51,9 +47,7 @@ void	ft_parse_obj_normal(t_vector *v, char *line)
 {
 	char		**tab;
 	t_vec3		vec;
-	int			i;
 
-	i = 0;
 	vec = (t_vec3){.0, 0.0, .0};
 	if ((tab = ft_strsplit(line, ' ')) && ft_tab_len(tab) == 4)
 	{

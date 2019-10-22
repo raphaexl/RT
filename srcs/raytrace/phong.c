@@ -81,6 +81,7 @@ t_col3			ft_trace(t_intersect *in, t_material *m, t_light *l)
 	t_vec3	dist;
 
 	c = (t_col3){0.0, 0.0, 0.0};
+	(void)dist;
 	dist = (t_vec3){.0, .0, .0};
 	intensity = l->diffuse;
 	lambert = m->albedo[0] * ft_vec3_dot(in->n, in->ray_light.dir) * 1.0 / M_PI;

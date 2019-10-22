@@ -79,7 +79,8 @@ int			ft_parse_material(t_material *m, char **str)
 	i = -1;
 	while (str[++i])
 		if (ft_material_componnent(m, str[i]))
-			;
+		{
+		}
 	return (i);
 }
 

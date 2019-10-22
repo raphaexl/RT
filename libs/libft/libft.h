@@ -20,6 +20,8 @@
 # define C(nbr) (nbr % 10) + '0'
 # define VECTOR_INIT_CAPACITY 4
 # include <unistd.h>
+# include <limits.h>
+# include <stdint.h>
 # include <string.h>
 # include <stdlib.h>
 # include <sys/types.h>
