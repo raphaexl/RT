@@ -1,0 +1,131 @@
+sphere
+{
+	pos : 0.0 0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+	radius : 0.8
+
+	diffuse1 : 1.0 1.0 1.0
+	diffuse2 : 0.8 0.2 0.1
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+	bump : 0.3
+}
+
+plane
+{
+	pos : 0.0 0.0 -22.4
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 0.0 -1.0
+
+	type : chess
+	diffuse : 1.0 0.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 0.0 22.4
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 0.0 1.0
+
+	diffuse : 1.0 1.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 10.0 0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : -1.0 0.0 0.0
+
+	diffuse : 1.0 0.0 1.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : -10.0 0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 1.0 0.0 0.0
+
+	diffuse : 1.0 1.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 5.2.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 -1.0 0.0
+
+	diffuse : 1.0 1.0 0.5
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 -5.2.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+
+	diffuse : 1.0 0.2 0.8
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+light
+{
+	type : DEFAULT
+	pos : -4.0 4.0 -10.0
+	dir : 0.0 1.0 0.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+	cut_off : 20
+	outer_cut_off : 25
+}
+
+light
+{
+	type : DEFAULT
+	pos : 0.0 2.0 4.0
+	dir : 0.0 1.0 0.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+	cut_off : 20
+	outer_cut_off : 25
+}
+
+camera
+{
+	pos : 0.0 0.0 3.0
+	look_at : 0.0 0.0 0.0
+	fov : 60.0
+}
+
+scene
+{
+	ambient : 0.01 0.01 0.01
+	filter : border
+}

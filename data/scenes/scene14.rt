@@ -1,0 +1,155 @@
+sphere
+{
+	pos : 0.0 0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	radius : 0.8
+
+	type : procedural
+	diffuse1 : 1.0 1.0 1.0
+	diffuse2 : 0.8 0.2 0.1
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+	bump : 0.2
+}
+
+ellipsoid
+{
+	pos : 1.0 0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 1.0 0.0 0.0
+	radius : 1.8
+	distance : 1.2
+
+	type : procedural
+	diffuse1 : 1.0 1.0 1.0
+	diffuse2 : 0.3 0.2 0.8
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+	bump : 0.2
+}
+
+paraboloid
+{
+	pos : -1.0 -2.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+	distance : 0.12
+
+	type : procedural
+	diffuse1 : 1.0 1.0 1.0
+	diffuse2 : 0.8 0.8 0.1
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+	bump : 0.2
+}
+
+plane
+{
+	pos : 0.0 0.0 -22.4
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 0.0 -1.0
+
+	type : chess
+	diffuse : 1.0 0.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 0.0 22.4
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 0.0 1.0
+
+	diffuse : 1.0 1.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 10.0 0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : -1.0 0.0 0.0
+
+	diffuse : 1.0 0.0 1.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : -10.0 0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 1.0 0.0 0.0
+
+	diffuse : 1.0 1.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 5.2.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 -1.0 0.0
+
+	diffuse : 1.0 1.0 0.5
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 -5.2.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+
+	diffuse : 1.0 0.2 0.8
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+
+light
+{
+	type : POINT
+	pos : 0.0 4.0 10.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+}
+
+light
+{
+	type : POINT
+	pos : 0.0 4.0 -10.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+}
+
+camera
+{
+	pos : 2.0 0.0 3.0
+	look_at : 0.0 0.0 0.0
+	fov : 60.0
+}

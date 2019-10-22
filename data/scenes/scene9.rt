@@ -1,0 +1,50 @@
+sphere
+{
+	pos : 0.0 -1.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	radius : 0.75
+
+	u_scale : 1.0
+	v_scale : 1.0
+	texture : data/imgs/marble.tga
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 -2.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+
+	u_scale : 0.05
+	v_scale : 0.05
+	texture : data/imgs/ground004.jpg
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+light
+{
+	type : DISTANT
+	dir : 0.0 1.0 0.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 4.0 4.0 4.0
+}
+
+camera
+{
+	pos : 0.0 0.0 5.0
+	look_at : 0.0 0.0 0.0
+	fov : 60.0
+}
+
+background
+{
+	color : 0.01 1.0 0.2
+}

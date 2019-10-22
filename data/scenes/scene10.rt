@@ -1,0 +1,92 @@
+sphere
+{
+	pos : 0.0 -1.0 -0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+	radius : 1
+	reflection : 0.9
+	diffuse1 : 0.6 0.6 1.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+sphere
+{
+	pos : 1.0 -2.0 2.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+	radius : 0.6
+	reflection : 0.9
+	diffuse1 : 0.6 0.6 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+sphere
+{
+	pos : -1.0 -2.0 2.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+	radius : 0.5
+	reflection : 0.9
+	diffuse1 : 0.6 0.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 -2.5 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+	reflection : 0.9
+	diffuse : 0.0 0.2 0.9
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+light
+{
+	type : DISTANT
+	pos : 0.0 4.0 10.0
+	dir : 0.0 1.0 0.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+	cut_off : 20
+	outer_cut_off : 25
+}
+
+light
+{
+	type : DEFAULT
+	pos : 0.0 4.0 10.0
+	dir : 0.0 1.0 0.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+	cut_off : 20
+	outer_cut_off : 25
+}
+
+camera
+{
+	pos : 0.0 0.0 8.0
+	look_at : 0.0 0.0 0.0
+	fov : 60.0
+}
+
+scene
+{
+	ambient : 0.01 0.01 0.01
+	filter : NONE
+	dof : false
+}

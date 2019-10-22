@@ -1,0 +1,44 @@
+sphere
+{
+	
+	pos : 0.0 0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+	radius : 2.0
+	reflection : 0.8
+
+	diffuse : 1.0 1.0 1.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+
+light
+{
+	type : POINT
+	pos : 0.0 4.0 10.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+}
+
+light
+{
+	type : POINT
+	pos : 0.0 4.0 -10.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+}
+
+background
+{
+	type : envmap
+}
+
+camera
+{
+	pos : 0.0 0.0 5.0
+	look_at : 0.0 0.0 0.0
+	fov : 60.0
+}

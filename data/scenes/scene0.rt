@@ -1,0 +1,106 @@
+sphere
+{
+	pos : -9.0 -3.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	radius : 2.0
+
+	diffuse : 1.0 0.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+sphere
+{
+	pos : 9.0 -3.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	radius : 2.0
+
+	diffuse : 0.0 1.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+cone
+{
+	pos : 0.0 -0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 45.0
+
+	angle : 20.0
+	height : -1.0
+
+	diffuse : 1.0 1.0 0.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+cylinder
+{
+	pos : 0.0 0.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 -45.0
+
+	radius : 2.0
+	dir : 0.0 1.0 0.0
+	height : -1.0
+
+	diffuse : 1.0 0.0 1.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 0.0 -4.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 0.0 1.0
+
+	diffuse : 0.0 0.0 1.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+plane
+{
+	pos : 0.0 -4.0 0.0
+	trans : 0.0 0.0 0.0
+	rot : 0.0 0.0 0.0
+
+	dir : 0.0 1.0 0.0
+
+	diffuse : 1.0 1.0 1.0
+	specular : 1.0 1.0 1.0
+	shininess : 60.0
+}
+
+
+light
+{
+	type : POINT
+	pos : 10.0 4.0 10.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+}
+
+light
+{
+	type : POINT
+	pos : -10.0 4.0 10.0
+	linear : 0.045
+	quadratic : 0.0075
+	intensity : 1.0 1.0 1.0
+}
+
+camera
+{
+	pos : 0.0 0.0 15.0
+	look_at : 0.0 0.0 0.0
+	fov : 60.0
+}
