@@ -6,7 +6,7 @@
 /*   By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 21:21:45 by ebatchas          #+#    #+#             */
-/*   Updated: 2019/10/22 12:56:59 by eabdenna         ###   ########.fr       */
+/*   Updated: 2019/11/02 16:38:57 by ebatchas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	ft_parse_obj_faces(t_obj *obj, char *line)
 	int			len;
 
 	i = -1;
-	len = ft_tab_len(tab1);
-	if ((tab1 = ft_strsplit(line, ' ')) && len > 3)
+	tab1 = ft_strsplit(line, ' ');
+	if ((tab1) && (len = ft_tab_len(tab1)) > 3)
 	{
 		if (len > 3)
 			while (++i < 3)
