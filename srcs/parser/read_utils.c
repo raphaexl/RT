@@ -6,7 +6,7 @@
 /*   By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 00:14:08 by ebatchas          #+#    #+#             */
-/*   Updated: 2019/09/22 19:54:45 by ebatchas         ###   ########.fr       */
+/*   Updated: 2019/12/12 11:49:29 by ebatchas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_read(int fd, t_aux_read_file *a)
 			}
 			a->data = a->temp;
 		}
-		if (!(a->n = read(fd, a->data + a->used, READALL_CHUNK)))
+		if (!((a->n = read(fd, a->data + a->used, READALL_CHUNK)) > 1))
 			break ;
 		a->used += a->n;
 	}

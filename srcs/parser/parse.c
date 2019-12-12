@@ -6,7 +6,7 @@
 /*   By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 15:54:42 by ebatchas          #+#    #+#             */
-/*   Updated: 2019/09/24 11:43:04 by ebatchas         ###   ########.fr       */
+/*   Updated: 2019/12/12 11:56:05 by ebatchas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void		ft_parse_file(t_scene *s, int fd)
 
 	i = -1;
 	len = 0;
-	ft_read_all(fd, &line, &len);
+	if (!(READALL_OK == ft_read_all(fd, &line, &len)))
+		ft_error();
 	line = ft_strcapitalize(line);
 	while (line[++i])
 	{

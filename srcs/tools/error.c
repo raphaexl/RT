@@ -6,7 +6,7 @@
 /*   By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 15:52:50 by ebatchas          #+#    #+#             */
-/*   Updated: 2019/09/21 19:54:33 by ebatchas         ###   ########.fr       */
+/*   Updated: 2019/12/12 11:48:15 by ebatchas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	ft_sdl_error(void)
 
 void	ft_error(void)
 {
-	ft_putendl("error");
+	ft_putendl("Usage: ./RT [(-o)] <scene.rt>");
+	ft_putendl("	-o  use multithreading for fast computation");
 	exit(EXIT_FAILURE);
 }
 

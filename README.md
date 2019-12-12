@@ -1,7 +1,9 @@
 # RT 1337 Raytracer 
 
-basic RTV1 scenes
-4 basic objects (cone, sphere, plane and cylinder)
+Usage : </br>
+  ./RT -o data/scenes/scene0.rt
+</br>
+
 <img src="demo/img0.png">
 </br>
 Camera position (configuration : position , look_at point, and fov)
