@@ -6,7 +6,7 @@
 /*   By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 08:56:17 by ebatchas          #+#    #+#             */
-/*   Updated: 2019/10/13 20:41:52 by ebatchas         ###   ########.fr       */
+/*   Updated: 2021/02/14 16:37:56 by ebatchas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,6 @@ static int		ft_min_ray(float t1, float t2, float *t)
 		return (1);
 	}
 	return (0);
-}
-
-float			ft_get_cone_limits(float t, t_ray *r, t_vec3 va, t_vec3 v)
-{
-	t_vec3	q;
-	float	m1;
-	float	m2;
-
-	if (t < 0)
-		return (INFINITY);
-	q = ft_vec3_sum(r->start, ft_vec3_kmult(t, r->dir));
-	m1 = ft_vec3_dot(va, q);
-	m2 = ft_vec3_dot(va, ft_vec3_sub(q, v));
-	if (m1 < 0.0 && m2 > 0)
-		return (t);
-	return (INFINITY);
 }
 
 static void		ft_aux_cone_init(t_aux_cone *a, t_cone *c, t_ray *r)
@@ -66,25 +50,24 @@ static void		ft_aux_cone_init(t_aux_cone *a, t_cone *c, t_ray *r)
 int				ft_cone_intersect(t_cone *c, t_ray *r, float *t)
 {
 	t_aux_cone	a;
+	int			ret;
+	t_vec3		cp;
+	float		h;
 
 	ft_aux_cone_init(&a, c, r);
 	if (a.d.delta < 0.00000001)
 		return (0);
 	a.d.delta = sqrt(a.d.delta);
-	if (c->height <= 0)
+	ret = ft_min_ray((-a.d.b + a.d.delta) / (2.0 * a.d.a),
+			(-a.d.b - a.d.delta) / (2.0 * a.d.a), t);
+	if (!ret || c->height <= 0)
+		return (ret);
+	cp = ft_vec3_sum(r->start, ft_vec3_kmult((*t), r->dir));
+	h = ft_vec3_dot(cp, c->v);
+	if (h < 0 || h > c->height)
 	{
-		return (ft_min_ray((-a.d.b + a.d.delta) / (2.0 * a.d.a),
-			(-a.d.b - a.d.delta) / (2.0 * a.d.a), t));
-	}
-	a.t1 = ft_get_cone_limits((-a.d.b + a.d.delta) / (2.0 * a.d.a),
-			r, a.va, c->v);
-	a.t2 = ft_get_cone_limits((-a.d.b - a.d.delta) / (2.0 * a.d.a),
-			r, a.va, c->v);
-	if (!ft_min_ray(a.t1, a.t2, t))
+		*t = INFINITY;
 		return (0);
-	a.m = ft_vec3_dot(r->dir, c->v) * (*t);
-	a.m += ft_vec3_dot(r->start, c->v);
-	if (a.m > c->height / 2.0 - 5.0e-1)
-		return (2);
+	}
 	return (1);
 }
